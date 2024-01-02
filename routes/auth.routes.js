@@ -5,6 +5,7 @@ const fs = require("fs");
 
 router.post("/register", require("../controllers/auth.controller").register);
 router.post("/login", require("../controllers/auth.controller").login);
+router.post("/product", require("../controllers/auth.controller").product);
 router.get("/logout", require("../controllers/auth.controller").logout);
 router.get("/check", (req, res) => {
     const privateKey = fs.readFileSync("./private-key.pem", "utf8");

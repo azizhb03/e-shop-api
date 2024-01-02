@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/auth.model");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
+const Productt =require("../models/product");
 
 const register = async (req, res) => {
   try {
@@ -74,8 +75,27 @@ const logout = (req, res) => {
 
 
 };
+const product = async (req, res) => {
+  try {
+    
+    if (Productt) {
+      res.status(400).json({ message: "successfully" });
+    } else {
+
+
+      res
+        .status(201)
+        .json({ message: "successfully" });
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ message: e.message });
+  }
+};
+
 module.exports = {
   register,
   login,
   logout,
+  product,
 };

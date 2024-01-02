@@ -5,7 +5,7 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
-  }, // String is shorthand for {type: String}
+  }, 
   email: {
     type: String,
     required: true,
@@ -23,6 +23,7 @@ const userSchema = new Schema({
     default: Date.now()
   }
 });
+
 
 const User = mongoose.model('User', userSchema);
 
