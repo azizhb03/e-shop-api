@@ -92,10 +92,28 @@ const product = async (req, res) => {
     res.status(500).json({ message: e.message });
   }
 };
+const createprod = async (req, res) => {
+  try {
+    
+    if (createprod) {
+      res.status(400).json({ message: "successfully" });
+    } else {
+
+
+      res
+        .status(201)
+        .json({ message: "successfully" });
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ message: e.message });
+  }
+};
 
 module.exports = {
   register,
   login,
   logout,
   product,
+  createprod
 };
